@@ -20,10 +20,17 @@ class Walk( Transportation ):
 
    def find_cost( self ):
       return 0
-
-
    
 # main program
+class Taxi(Transportation):
+
+   def __init__(self, start, end, distance):
+      Transportation.__init__(self, start, end, distance)
+   
+   def find_cost(self):
+      return 40*self.distance
+
+
 class Jet(Transportation):
     def __init__(self, start, end, distance, speed):
         Transportation.__init__(self, start, end, distance)
@@ -39,7 +46,8 @@ class Jet(Transportation):
 
 trip = [ 
   Walk("KMITL","KMITL SCB Bank", 0.6),
-  Jet("KMITL SCB Bank", "KMITL 7-11", 10, 900),
+  Jet("Thailand", "Japan", 10, 900),
+  Taxi("Bangkok", "Pattaya", 100)
 ]
 
 travel_cost = 0
