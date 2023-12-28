@@ -23,12 +23,12 @@ class Walk( Transportation ):
    
 # main program
 class Taxi(Transportation):
-
-   def __init__(self, start, end, distance):
+   def __init__(self, start, end, distance, initial_fare=40):
       Transportation.__init__(self, start, end, distance)
+      self.initial_fare = initial_fare
    
    def find_cost(self):
-      return 40*self.distance
+      return self.initial_fare * self.distance
 
 
 class Jet(Transportation):
@@ -41,15 +41,25 @@ class Jet(Transportation):
         speed_factor = 100 
         cost_per_km = max(base_rate - self.speed / speed_factor, base_rate / 2)
         return self.distance * cost_per_km
-
+      
+      
+class Boat(Transportation):
+    def __init__(self, start, end, distance, people):
+        Transportation.__init__(self, start, end, distance)
+        self.people = people  # Number of people on the boat
+        
+    def find_cost(self):
+        return 100 * self.people + 10 * self.distance
+      
 trip = [ 
   Walk("KMITL","KMITL SCB Bank", 0.6),
   Jet("Thailand", "Japan", 10, 900),
-  Taxi("Bangkok", "Pattaya", 100)
+  Taxi("Bangkok", "Pattaya", 100),
+  Boat("Bangkok", "Samutprakan", 30, 25)
 ]
 
 travel_cost = 0
 for travel in trip:
    travel_cost += travel.find_cost()
 
-print(travel_cost)
+print(f"The Cost Is: {travel_cost} Baht")
