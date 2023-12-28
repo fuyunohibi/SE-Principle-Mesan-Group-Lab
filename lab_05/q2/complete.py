@@ -42,8 +42,6 @@ class Jet(Transportation):
         cost_per_km = max(base_rate - self.speed / speed_factor, base_rate / 2)
         return self.distance * cost_per_km
 
-
-
 trip = [ 
   Walk("KMITL","KMITL SCB Bank", 0.6),
   Jet("Thailand", "Japan", 10, 900),
