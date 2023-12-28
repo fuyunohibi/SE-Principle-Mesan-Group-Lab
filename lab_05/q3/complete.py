@@ -102,7 +102,7 @@ class Hanoi:
     def solve(self):
         self.movetower(3, self.start, self.destination, self.workspace)
 
-turtle.speed(0) 
+turtle.speed(7) 
 turtle.bgcolor("white")
 turtle.hideturtle()
 
