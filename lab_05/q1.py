@@ -36,8 +36,5 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-<<<<<<< HEAD
 
     
-=======
->>>>>>> 9ee66f96d248b75c8e879050907b7af9f0cc7ef3
