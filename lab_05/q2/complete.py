@@ -42,6 +42,7 @@ class Jet(Transportation):
         cost_per_km = max(base_rate - self.speed / speed_factor, base_rate / 2)
         return self.distance * cost_per_km
       
+      
 class Boat(Transportation):
     def __init__(self, start, end, distance, people):
         Transportation.__init__(self, start, end, distance)
