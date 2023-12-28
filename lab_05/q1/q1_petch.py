@@ -15,13 +15,22 @@ class Simple_drawing_window3(Simple_drawing_window):
         p.begin(self)
 
         p.setPen(QColor(0, 0, 0))
-        p.setBrush(QColor(0, 127, 0))
 
-        p.drawRect(300,200,200,200)
-        p.drawPolygon([QPoint(300,200), QPoint(500,200), QPoint(400,100)])
-        p.drawRect(350,300,100,100 )
+        p.setBrush(QColor(139, 69, 19))  # Dark brown color for the bear
+        p.drawEllipse(250, 200, 200, 200)  # Main body
+
+        p.drawEllipse(300, 150, 100, 100)  # Head
+
+        p.drawEllipse(290, 120, 30, 30)  # Left ear
+        p.drawEllipse(380, 120, 30, 30)  # Right ear
+
+        p.setBrush(QColor(0, 0, 0))
+        p.drawEllipse(320, 170, 10, 10)  # Left eye
+        p.drawEllipse(370, 170, 10, 10)  # Right eye
+
+        p.drawEllipse(345, 200, 10, 10)  # Nose
+
         p.end()
-
 
 def main():
     app = QApplication(sys.argv)
